@@ -10,4 +10,7 @@ def saludar_con_parametros(request,nombre:str,apellido:str):
     apellido = apellido.capitalize()
     return HttpResponse(F"HOLA {nombre} {apellido} ")
 def index(request):
-    return render(request,"core/index.html")
+    from datetime import datetime 
+    anio_actual = datetime.now().year
+    contexto ={"anio":anio_actual}
+    return render(request,"core/index.html",contexto)
