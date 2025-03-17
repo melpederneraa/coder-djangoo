@@ -1,0 +1,17 @@
+{% extends 'core/base.html' %}
+{% block title %}Buscar Post{% endblock %}
+{% block content %}
+    <h1>Buscar Post</h1>
+    <form method="get">
+        {{ form.as_p }}
+        <button type="submit">Buscar</button>
+    </form>
+    <h2>Resultados</h2>
+    <ul>
+        {% for post in resultados %}
+            <li><strong>{{ post.titulo }}</strong> - {{ post.autor }}</li>
+        {% empty %}
+            <li>No se encontraron resultados.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

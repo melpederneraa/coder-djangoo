@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Core{% endblock %}</title>
+</head>
+<body>
+    <nav>
+        <a href="{% url 'inicio' %}">Inicio</a> |
+        <a href="{% url 'crear_post' %}">Nuevo Post</a> |
+        <a href="{% url 'buscar' %}">Buscar</a>
+    </nav>
+    <hr>
+    {% block content %}{% endblock %}
+</body>
+</html>

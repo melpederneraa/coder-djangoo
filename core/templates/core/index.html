@@ -1,17 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>la caja de pandora</h1>
+{% extends 'core/base.html' %}
+{% block title %}Inicio{% endblock %}
+{% block content %}
+    <h1>Posts Recientes</h1>
     <ul>
-        <li>ahgsdfhfjdskasjdhfg</li>
-        <li>asdfghjk</li>
-        <li>sdfghjkl</li>
+        {% for post in posts %}
+            <li><strong>{{ post.titulo }}</strong> - {{ post.autor }}</li>
+        {% endfor %}
     </ul>
-    <footer>Hecho en Coder año {{ anio }}</footer>
-</body>
-</html>
+{% endblock %}
